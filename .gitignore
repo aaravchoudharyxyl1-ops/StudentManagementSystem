@@ -1,11 +1,36 @@
-# Maven
-/target/
-# IntelliJ
-/.idea/
+# Maven build files
+target/
+**/target/
+
+# IntelliJ IDEA
+.idea/
 *.iml
-/out/
+*.iws
+*.ipr
+out/
+
 # macOS
 .DS_Store
-# Local secrets
+.AppleDouble
+.LSOverride
+
+# Environment variables and secrets
 .env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.jks
+
+# Logs
 *.log
+logs/
+
+# Temporary files
+*.tmp
+*.swp
+*.swo
+
+# Java
+*.class

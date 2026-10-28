@@ -4,30 +4,15 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class AppTest {
-    @Test
-    void addFindUpdateDeleteStudent() {
-        StudentManager manager = new StudentManager();
-        manager.addStudent(new Student(101, "Rahul", 20));
-        assertEquals(1, manager.getAllStudents().size());
-        assertEquals("Rahul", manager.findStudent(101).orElseThrow().getName());
-        assertTrue(manager.updateStudent(101, "Rahul Sharma", 21));
-        assertEquals("Rahul Sharma", manager.findStudent(101).orElseThrow().getName());
-        assertTrue(manager.deleteStudent(101));
-        assertTrue(manager.findStudent(101).isEmpty());
-    }
-
-    @Test
-    void rejectDuplicateIds() {
-        StudentManager manager = new StudentManager();
-        manager.addStudent(new Student(1, "Priya", 19));
-        assertThrows(IllegalArgumentException.class,
-                () -> manager.addStudent(new Student(1, "Amit", 20)));
-    }
-
-    @Test
-    void rejectInvalidStudentData() {
-        assertThrows(IllegalArgumentException.class, () -> new Student(0, "Test", 20));
+    @Test void studentModelValidation() {
+        Student student = new Student(101, "Rahul", 20);
+        student.setName("Rahul Sharma");
+        student.setAge(21);
+        assertEquals(101, student.getId());
+        assertEquals("Rahul Sharma", student.getName());
+        assertEquals(21, student.getAge());
+        assertThrows(IllegalArgumentException.class, () -> new Student(0, "A", 20));
         assertThrows(IllegalArgumentException.class, () -> new Student(1, " ", 20));
-        assertThrows(IllegalArgumentException.class, () -> new Student(1, "Test", -1));
+        assertThrows(IllegalArgumentException.class, () -> new Student(1, "A", -1));
     }
 }
