@@ -1,39 +1,157 @@
-target/
-!.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**/target/
-!**/src/test/**/target/
-.kotlin
+# ==================================================
+# STUDENT MANAGEMENT SYSTEM
+# Java 21 | Maven | IntelliJ IDEA | Git | macOS
+# ==================================================
 
-### IntelliJ IDEA ###
-.idea/modules.xml
-.idea/jarRepositories.xml
-.idea/compiler.xml
-.idea/libraries/
-*.iws
+
+# ==================================================
+# 1. MAVEN
+# ==================================================
+
+# Maven build output
+target/
+
+# Maven release files
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+
+# Maven wrapper JAR (keep it if present)
+!.mvn/wrapper/maven-wrapper.jar
+
+
+# ==================================================
+# 2. INTELLIJ IDEA
+# ==================================================
+
+# IntelliJ project settings
+.idea/
+
+# IntelliJ module and project files
 *.iml
 *.ipr
+*.iws
 
-### Eclipse ###
-.apt_generated
+# IntelliJ generated output
+out/
+
+
+# ==================================================
+# 3. JAVA
+# ==================================================
+
+# Compiled Java classes
+*.class
+
+# Java crash logs
+hs_err_pid*
+replay_pid*
+
+# Temporary Java files
+*.tmp
+*.temp
+
+
+# ==================================================
+# 4. ECLIPSE
+# ==================================================
+
 .classpath
-.factorypath
 .project
-.settings
+.settings/
+.metadata/
+.apt_generated/
+.factorypath
 .springBeans
-.sts4-cache
+.sts4-cache/
 
-### NetBeans ###
+
+# ==================================================
+# 5. NETBEANS
+# ==================================================
+
 /nbproject/private/
 /nbbuild/
 /dist/
 /nbdist/
 /.nb-gradle/
-build/
-!**/src/main/**/build/
-!**/src/test/**/build/
 
-### VS Code ###
+
+# ==================================================
+# 6. VS CODE
+# ==================================================
+
 .vscode/
 
-### Mac OS ###
+
+# ==================================================
+# 7. GRADLE (OPTIONAL)
+# ==================================================
+
+.gradle/
+build/
+
+
+# ==================================================
+# 8. macOS
+# ==================================================
+
 .DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+
+# ==================================================
+# 9. LOG FILES
+# ==================================================
+
+*.log
+logs/
+log/
+
+
+# ==================================================
+# 10. TEMPORARY FILES
+# ==================================================
+
+*.swp
+*.swo
+*~
+*.bak
+*.backup
+
+
+# ==================================================
+# 11. ENVIRONMENT & SECRETS
+# ==================================================
+
+.env
+.env.*
+!.env.example
+
+*.key
+*.pem
+
+# Local application secrets
+secrets/
+config/local.properties
+
+
+# ==================================================
+# 12. DATABASE FILES
+# ==================================================
+
+*.db
+*.sqlite
+*.sqlite3
+
+
+# ==================================================
+# END OF FILE
+# ==================================================
