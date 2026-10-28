@@ -10,7 +10,7 @@ An IntelliJ IDEA console application with **persistent MySQL student records** (
 
 ## 2. Initialize MySQL from the terminal
 
-Open `sql/setup.sql` and **replace `CHANGE_THIS_PASSWORD` with a strong password** (both occurrences). Do not commit your real password: revert the file before committing, or run the SQL manually with a secure password.
+Before first-time setup, replace the single `CHANGE_THIS_PASSWORD` placeholder in `sql/setup.sql` with a strong password. Do not commit real credentials. After running the script, restore the placeholder before committing changes.
 
 From the project root:
 
@@ -67,6 +67,6 @@ git push -u origin main
 
 - `App.java` is the entry point (`com.studentmanagement.App`).
 - `StudentManager.java` uses JDBC prepared statements, with a separate connection per operation.
-- `sql/setup.sql` is idempotent for database/table creation, but resets the `student_app` password to the example value if rerun. Always change the placeholder first.
+- `sql/setup.sql` uses `IF NOT EXISTS` for database, user, and table creation. Rerunning it does not reset an existing `student_app` password.
 - `mvn clean verify` tests the Java model; it does not test a live MySQL connection. Actual database execution requires a running MySQL server and valid credentials.
-- Git history in the ZIP is the previously packaged local repository, not a clone of GitHub.
+- The local `main` branch is connected to the GitHub repository through the `origin` remote.
